@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KeyLab &middot; Clonaci&oacute;n de Mecatr&oacute;nicas y Programaci&oacute;n de Llaves Automotrices en CDMX</title>
+<meta name="description" content="Especialistas en electr&oacute;nica automotriz en Ciudad de M&eacute;xico: clonaci&oacute;n de mecatr&oacute;nicas, programaci&oacute;n y duplicado de llaves con chip e inteligentes. Servicio en taller y a domicilio.">
+<meta property="og:title" content="KeyLab &middot; Electr&oacute;nica automotriz en CDMX">
+<meta property="og:description" content="Clonaci&oacute;n de mecatr&oacute;nicas y programaci&oacute;n de llaves automotrices. Servicio en taller y a domicilio.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --negro:#07090D;
+  --grafito:#10141B;
+  --grafito-2:#171D26;
+  --linea:#232B37;
+  --blanco:#EDF2F7;
+  --plata:#8B96A5;
+  --azul:#2E7CF6;
+  --azul-glow:rgba(46,124,246,.35);
+  --rojo:#E5484D;
+  --verde-wa:#25D366;
+  --display:'Space Grotesk',sans-serif;
+  --body:'Inter',sans-serif;
+  --mono:'IBM Plex Mono',monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{background:var(--negro);color:var(--blanco);font-family:var(--body);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{font-family:var(--display);line-height:1.15;letter-spacing:-.01em}
+.wrap{max-width:1140px;margin:0 auto;padding:0 20px}
+section{padding:84px 0}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--azul);display:flex;align-items:center;gap:10px;margin-bottom:16px}
+.eyebrow::before{content:"";width:26px;height:1px;background:var(--azul)}
+h2{font-size:clamp(26px,4vw,38px);margin-bottom:18px}
+.sub{color:var(--plata);max-width:640px}
+
+/* ===== NAV ===== */
+header{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(7,9,13,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--linea)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:66px}
+.logo{font-family:var(--display);font-weight:700;font-size:21px;letter-spacing:.02em;display:flex;align-items:center;gap:9px}
+.logo .k{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border:1.5px solid var(--azul);border-radius:7px;color:var(--azul);font-size:15px;box-shadow:0 0 14px var(--azul-glow)}
+.logo span.lab{color:var(--azul)}
+.menu{display:flex;gap:26px;align-items:center;list-style:none}
+.menu a{font-size:14px;font-weight:500;color:var(--plata);transition:color .2s;padding:4px 0;border-bottom:2px solid transparent}
+.menu a:hover{color:var(--blanco)}
+.menu a.act{color:var(--blanco);border-bottom-color:var(--azul)}
+.btn-wa-nav{display:inline-flex;align-items:center;gap:8px;background:var(--verde-wa);color:#06220f;font-weight:600;font-size:13.5px;padding:9px 16px;border-radius:8px;transition:filter .2s}
+.btn-wa-nav:hover{filter:brightness(1.08)}
+.menu a.btn-wa-nav{border-bottom:none;color:#06220f}
+.burger{display:none;background:none;border:1px solid var(--linea);border-radius:8px;width:42px;height:42px;color:var(--blanco);font-size:20px;cursor:pointer}
+@media(max-width:920px){
+  .menu{position:fixed;top:66px;left:0;right:0;background:var(--grafito);flex-direction:column;align-items:flex-start;padding:22px;gap:18px;border-bottom:1px solid var(--linea);transform:translateY(-130%);transition:transform .28s ease;box-shadow:0 20px 40px rgba(0,0,0,.5)}
+  .menu.open{transform:translateY(0)}
+  .menu a{font-size:15px}
+  .burger{display:block}
+}
+
+/* ===== BOTONES ===== */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;font-weight:600;font-size:15px;padding:14px 26px;border-radius:10px;transition:transform .15s,box-shadow .2s,filter .2s;cursor:pointer;border:none;font-family:var(--body)}
+.btn-azul{background:var(--azul);color:#fff;box-shadow:0 6px 24px var(--azul-glow)}
+.btn-azul:hover{filter:brightness(1.1);transform:translateY(-1px)}
+.btn-ghost{background:transparent;color:var(--blanco);border:1px solid var(--linea)}
+.btn-ghost:hover{border-color:var(--azul);color:var(--azul)}
+.btn-rojo{background:var(--rojo);color:#fff;box-shadow:0 6px 24px rgba(229,72,77,.35)}
+.btn-rojo:hover{filter:brightness(1.08);transform:translateY(-1px)}
+
+/* ===== HERO INICIO ===== */
+.hero{position:relative;padding:160px 0 96px;overflow:hidden;background:
+  radial-gradient(900px 420px at 78% -10%,rgba(46,124,246,.14),transparent 60%),
+  var(--negro)}
+.hero::before,.page-hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--linea) 1px,transparent 1px),linear-gradient(90deg,var(--linea) 1px,transparent 1px);background-size:56px 56px;opacity:.16;mask-image:radial-gradient(700px 460px at 70% 20%,#000 30%,transparent 75%);-webkit-mask-image:radial-gradient(700px 460px at 70% 20%,#000 30%,transparent 75%)}
+.hero .wrap,.page-hero .wrap{position:relative}
+.hero-tag{font-family:var(--mono);font-size:12px;color:var(--plata);border:1px solid var(--linea);border-radius:999px;padding:7px 14px;display:inline-flex;align-items:center;gap:8px;margin-bottom:26px;background:rgba(23,29,38,.6)}
+.hero-tag .dot{width:7px;height:7px;border-radius:50%;background:var(--azul);box-shadow:0 0 10px var(--azul)}
+h1{font-size:clamp(30px,5.2vw,54px);max-width:820px;margin-bottom:8px}
+.scanline{width:120px;height:3px;margin:18px 0 22px;background:linear-gradient(90deg,var(--azul),transparent);border-radius:2px;position:relative;overflow:hidden}
+.scanline::after{content:"";position:absolute;top:0;left:-40%;width:40%;height:100%;background:#fff;opacity:.85;animation:scan 2.6s ease-in-out infinite}
+@keyframes scan{0%{left:-40%}55%,100%{left:110%}}
+.hero p.sub{font-size:18px;margin-bottom:34px}
+.cta-row{display:flex;gap:14px;flex-wrap:wrap}
+.hero-img{margin-top:52px;border-radius:16px;overflow:hidden;border:1px solid var(--linea)}
+.hero-img img{width:100%}
+
+/* ===== HERO INTERIOR ===== */
+.page-hero{position:relative;padding:140px 0 56px;overflow:hidden;background:
+  radial-gradient(700px 320px at 80% -20%,rgba(46,124,246,.13),transparent 60%),var(--negro)}
+.page-hero h1{font-size:clamp(28px,4.4vw,44px)}
+.page-hero p.sub{font-size:17px;margin-top:4px}
+
+/* ===== BENEFICIOS ===== */
+.beneficios{padding:0 0 84px}
+.ben-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px}
+.ben{background:var(--grafito);border:1px solid var(--linea);border-radius:12px;padding:20px 16px;display:flex;flex-direction:column;gap:12px;transition:border-color .2s,transform .2s}
+.ben:hover{border-color:var(--azul);transform:translateY(-2px)}
+.ben svg{width:26px;height:26px;stroke:var(--azul)}
+.ben span{font-size:14px;font-weight:500}
+
+/* ===== SECCIONES ===== */
+.gris{background:var(--grafito)}
+.dos-col{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+@media(max-width:860px){.dos-col{grid-template-columns:1fr}}
+.dos-col p.parr{color:var(--plata);margin-bottom:16px}
+.panel-img{border-radius:14px;overflow:hidden;border:1px solid var(--linea);background:var(--grafito-2);min-height:260px;display:flex;align-items:center;justify-content:center}
+.panel-img.vacio svg{width:64px;height:64px;stroke:var(--linea)}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 26px}
+.chip{font-family:var(--mono);font-size:13px;color:var(--blanco);background:var(--grafito-2);border:1px solid var(--linea);border-left:2px solid var(--azul);border-radius:6px;padding:7px 13px}
+.lista-check{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:11px;margin:22px 0 26px}
+.lista-check li{display:flex;gap:10px;align-items:flex-start;color:var(--plata);font-size:15px}
+.lista-check li::before{content:"";flex:none;width:17px;height:17px;margin-top:3px;border-radius:5px;background:var(--azul-glow);border:1px solid var(--azul);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232E7CF6' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E");background-size:11px;background-position:center;background-repeat:no-repeat}
+.nota{font-size:13.5px;color:var(--plata);border-left:2px solid var(--azul);padding-left:14px;max-width:640px}
+
+/* ===== PERDIDAS ===== */
+.perdidas{background:linear-gradient(140deg,#1A0E10 0%,var(--grafito) 70%);border-top:1px solid rgba(229,72,77,.35);border-bottom:1px solid rgba(229,72,77,.35);position:relative;overflow:hidden}
+.perdidas::before{content:"";position:absolute;top:-80px;left:-60px;width:340px;height:340px;background:radial-gradient(circle,rgba(229,72,77,.16),transparent 70%)}
+.perdidas .eyebrow{color:var(--rojo)}
+.perdidas .eyebrow::before{background:var(--rojo)}
+.perdidas p{color:var(--plata);max-width:620px;margin-bottom:14px}
+.perdidas .btn{margin-top:14px}
+
+/* ===== PROCESO ===== */
+.pasos{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:36px}
+.paso{background:var(--grafito);border:1px solid var(--linea);border-radius:12px;padding:24px 20px}
+.paso .num{font-family:var(--mono);font-size:13px;color:var(--azul);border:1px solid var(--azul);border-radius:6px;padding:3px 9px;display:inline-block;margin-bottom:14px}
+.paso h3{font-size:17px;margin-bottom:8px}
+.paso p{color:var(--plata);font-size:14.5px}
+
+/* ===== MARCAS ===== */
+.marcas-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:11px;margin:34px 0 22px}
+.marca{background:var(--grafito-2);border:1px solid var(--linea);border-radius:10px;padding:16px 10px;text-align:center;font-family:var(--display);font-weight:600;font-size:14.5px;color:var(--plata);transition:color .2s,border-color .2s}
+.marca:hover{color:var(--blanco);border-color:var(--azul)}
+
+/* ===== FAQ ===== */
+.faq details{background:var(--grafito-2);border:1px solid var(--linea);border-radius:12px;margin-bottom:10px;overflow:hidden}
+.faq summary{cursor:pointer;list-style:none;padding:18px 20px;font-weight:600;font-family:var(--display);font-size:16px;display:flex;justify-content:space-between;align-items:center;gap:14px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:var(--mono);color:var(--azul);font-size:20px;transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{padding:0 20px 18px;color:var(--plata);font-size:15px}
+
+/* ===== CTA FINAL ===== */
+.cta-final{text-align:center;background:radial-gradient(600px 300px at 50% 0%,rgba(46,124,246,.16),transparent 70%),var(--negro)}
+.cta-final h2{max-width:720px;margin:0 auto 16px}
+.cta-final p{color:var(--plata);margin-bottom:30px}
+
+/* ===== CONTACTO ===== */
+.cont-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px;margin-top:36px}
+@media(max-width:860px){.cont-grid{grid-template-columns:1fr}}
+.cont-info p{color:var(--plata);margin-bottom:10px;display:flex;gap:10px;align-items:flex-start}
+.cont-info svg{width:19px;height:19px;stroke:var(--azul);flex:none;margin-top:3px}
+.cont-info .btn{margin:20px 0 28px;width:100%}
+.mapa{border-radius:14px;overflow:hidden;border:1px solid var(--linea)}
+.mapa iframe{width:100%;height:280px;border:0;display:block;filter:grayscale(.4) contrast(1.05)}
+form{display:grid;gap:13px}
+.f-row{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+@media(max-width:560px){.f-row{grid-template-columns:1fr}}
+label{font-size:13px;font-weight:500;color:var(--plata);display:grid;gap:6px}
+input,select,textarea{background:var(--grafito-2);border:1px solid var(--linea);border-radius:9px;padding:12px 14px;color:var(--blanco);font-family:var(--body);font-size:15px;width:100%;transition:border-color .2s}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--azul);box-shadow:0 0 0 3px rgba(46,124,246,.18)}
+textarea{resize:vertical;min-height:110px}
+
+/* ===== FOOTER ===== */
+footer{border-top:1px solid var(--linea);padding:48px 0 34px;background:var(--negro)}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:36px;margin-bottom:36px}
+@media(max-width:760px){.foot-grid{grid-template-columns:1fr}}
+footer h4{font-family:var(--display);font-size:15px;margin-bottom:14px}
+footer p,footer a{font-size:14px;color:var(--plata);line-height:1.9}
+footer a:hover{color:var(--azul)}
+.foot-bottom{border-top:1px solid var(--linea);padding-top:22px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:13px;color:var(--plata)}
+
+/* ===== FLOTANTE WA ===== */
+.wa-float{position:fixed;bottom:22px;right:22px;z-index:60;width:56px;height:56px;border-radius:50%;background:var(--verde-wa);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 26px rgba(37,211,102,.4);transition:transform .15s}
+.wa-float:hover{transform:scale(1.07)}
+.wa-float svg{width:29px;height:29px;fill:#06220f}
+
+/* ===== REVEAL ===== */
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+.reveal.vis{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .reveal{opacity:1;transform:none;transition:none}
+  .scanline::after{animation:none}
+}
+:focus-visible{outline:2px solid var(--azul);outline-offset:2px}
+
+/* ===== SPA / VISTAS ===== */
+.vista{display:none}
+.vista.act{display:block}
+header.scrolled{background:rgba(7,9,13,.97);box-shadow:0 6px 24px rgba(0,0,0,.45)}
+#loader{position:fixed;inset:0;z-index:100;background:var(--negro);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;transition:opacity .4s}
+#loader.off{opacity:0;pointer-events:none}
+#loader .logo{font-size:26px}
+#loader .barra{width:150px;height:3px;background:var(--grafito-2);border-radius:2px;overflow:hidden;position:relative}
+#loader .barra::after{content:"";position:absolute;top:0;left:-40%;width:40%;height:100%;background:var(--azul);animation:scan 1.4s ease-in-out infinite}
+
+</style>
+</head>
+<body>
+
+<div id="loader">
+  <span class="logo"><span class="k">&#9919;</span>Key<span class="lab">Lab</span></span>
+  <div class="barra"></div>
+</div>
+
+<header id="topbar">
+  <div class="wrap nav">
+    <a class="logo" href="#inicio"><span class="k">&#9919;</span>Key<span class="lab">Lab</span></a>
+    <nav>
+      <ul class="menu" id="menu">
+        <li><a href="#inicio" data-vista="inicio">Inicio</a></li>
+        <li><a href="#clonacion" data-vista="clonacion">Clonaci&oacute;n de Mecatr&oacute;nicas</a></li>
+        <li><a href="#llaves" data-vista="llaves">Programaci&oacute;n de Llaves</a></li>
+        <li><a href="#domicilio" data-vista="domicilio">Servicio a Domicilio</a></li>
+        <li><a href="#contacto" data-vista="contacto">Contacto</a></li>
+        <li><a class="btn-wa-nav" id="wa-nav" href="#" target="_blank" rel="noopener">WhatsApp</a></li>
+      </ul>
+    </nav>
+    <button class="burger" id="burger" aria-label="Abrir men&uacute;">&#9776;</button>
+  </div>
+</header>
+
+<!-- ============ VISTA: INICIO ============ -->
+<main class="vista" id="v-inicio">
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-tag"><span class="dot"></span>Laboratorio de electr&oacute;nica automotriz &middot; CDMX</div>
+    <h1 id="hero-titulo"></h1>
+    <div class="scanline"></div>
+    <p class="sub" id="hero-sub"></p>
+    <div class="cta-row">
+      <a class="btn btn-azul" id="hero-btn1" href="#" target="_blank" rel="noopener"></a>
+      <a class="btn btn-ghost" id="hero-btn2" href="#clonacion"></a>
+    </div>
+    <div class="hero-img" id="hero-img" hidden><img alt="Equipo de programaci&oacute;n automotriz KeyLab"></div>
+  </div>
+</section>
+
+<div class="beneficios">
+  <div class="wrap"><div class="ben-grid" id="ben-grid"></div></div>
+</div>
+
+<section class="gris">
+  <div class="wrap dos-col">
+    <div>
+      <div class="eyebrow">Nosotros</div>
+      <h2 id="nos-titulo"></h2>
+      <p class="parr" id="nos-p1"></p>
+      <p class="parr" id="nos-p2"></p>
+    </div>
+    <div class="panel-img vacio" id="nos-img">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.1-3.1a2 2 0 0 0-2.8 0L6 21"/></svg>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Proceso</div>
+    <h2 id="pro-titulo"></h2>
+    <div class="pasos" id="pro-pasos"></div>
+  </div>
+</section>
+
+<section class="gris">
+  <div class="wrap">
+    <div class="eyebrow">Compatibilidad</div>
+    <h2 id="mar-titulo"></h2>
+    <div class="marcas-grid" id="mar-grid"></div>
+    <p class="nota" id="mar-nota"></p>
+  </div>
+</section>
+
+<section class="cta-final">
+  <div class="wrap">
+    <h2 class="cta-titulo"></h2>
+    <p class="cta-texto"></p>
+    <a class="btn btn-azul cta-btn" href="#" target="_blank" rel="noopener"></a>
+  </div>
+</section>
+</main>
+
+<!-- ============ VISTA: CLONACION ============ -->
+<main class="vista" id="v-clonacion">
+
+<section class="page-hero">
+  <div class="wrap">
+    <div class="eyebrow">Servicio especializado</div>
+    <h1 id="clo-titulo"></h1>
+    <div class="scanline"></div>
+    <p class="sub" id="clo-desc"></p>
+  </div>
+</section>
+<section style="padding-top:36px">
+  <div class="wrap dos-col">
+    <div>
+      <h2>Sistemas y capacidades</h2>
+      <div class="chips" id="clo-sistemas"></div>
+      <div class="chips" id="clo-caps"></div>
+      <a class="btn btn-azul" id="clo-btn" href="#" target="_blank" rel="noopener"></a>
+    </div>
+    <div class="panel-img vacio" id="clo-img">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.2"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M1 9h3M1 15h3M20 9h3M20 15h3"/></svg>
+    </div>
+  </div>
+</section>
+<section class="gris">
+  <div class="wrap">
+    <div class="eyebrow">Proceso</div>
+    <h2 class="pro-titulo-2"></h2>
+    <div class="pasos" id="pro-pasos-2"></div>
+  </div>
+</section>
+
+<section class="cta-final">
+  <div class="wrap">
+    <h2 class="cta-titulo"></h2>
+    <p class="cta-texto"></p>
+    <a class="btn btn-azul cta-btn" href="#" target="_blank" rel="noopener"></a>
+  </div>
+</section>
+</main>
+
+<!-- ============ VISTA: LLAVES ============ -->
+<main class="vista" id="v-llaves">
+
+<section class="page-hero">
+  <div class="wrap">
+    <div class="eyebrow">Servicio especializado</div>
+    <h1 id="lla-titulo"></h1>
+    <div class="scanline"></div>
+    <p class="sub" id="lla-desc"></p>
+  </div>
+</section>
+<section style="padding-top:36px">
+  <div class="wrap dos-col">
+    <div class="panel-img vacio" id="lla-img">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.2"><circle cx="7.5" cy="15.5" r="4.5"/><path d="m11 12 8.5-8.5M16 7l3 3"/></svg>
+    </div>
+    <div>
+      <h2>Servicios disponibles</h2>
+      <ul class="lista-check" id="lla-lista"></ul>
+      <a class="btn btn-azul" id="lla-btn" href="#" target="_blank" rel="noopener"></a>
+    </div>
+  </div>
+</section>
+<section class="perdidas">
+  <div class="wrap">
+    <div class="eyebrow">Caso urgente</div>
+    <h2 id="per-titulo"></h2>
+    <p id="per-p1"></p>
+    <p id="per-p2"></p>
+    <a class="btn btn-rojo" id="per-btn" href="#" target="_blank" rel="noopener"></a>
+  </div>
+</section>
+
+<section class="cta-final">
+  <div class="wrap">
+    <h2 class="cta-titulo"></h2>
+    <p class="cta-texto"></p>
+    <a class="btn btn-azul cta-btn" href="#" target="_blank" rel="noopener"></a>
+  </div>
+</section>
+</main>
+
+<!-- ============ VISTA: DOMICILIO ============ -->
+<main class="vista" id="v-domicilio">
+
+<section class="page-hero">
+  <div class="wrap">
+    <div class="eyebrow">Unidad m&oacute;vil</div>
+    <h1 id="dom-titulo"></h1>
+    <div class="scanline"></div>
+    <p class="sub" id="dom-desc"></p>
+  </div>
+</section>
+<section style="padding-top:36px">
+  <div class="wrap dos-col">
+    <div>
+      <h2>Modalidades de atenci&oacute;n</h2>
+      <ul class="lista-check" id="dom-lista"></ul>
+      <p class="nota" id="dom-nota"></p>
+      <a class="btn btn-azul" id="dom-btn" href="#" target="_blank" rel="noopener" style="margin-top:24px"></a>
+    </div>
+    <div class="panel-img vacio" id="dom-img">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.2"><path d="M3 17h2m14 0h2M5 17a2 2 0 1 0 4 0 2 2 0 0 0-4 0Zm10 0a2 2 0 1 0 4 0 2 2 0 0 0-4 0Z"/><path d="M5 17V9l2-4h8l4 4h2a2 2 0 0 1 2 2v6"/></svg>
+    </div>
+  </div>
+</section>
+
+<section class="cta-final">
+  <div class="wrap">
+    <h2 class="cta-titulo"></h2>
+    <p class="cta-texto"></p>
+    <a class="btn btn-azul cta-btn" href="#" target="_blank" rel="noopener"></a>
+  </div>
+</section>
+</main>
+
+<!-- ============ VISTA: CONTACTO ============ -->
+<main class="vista" id="v-contacto">
+
+<section class="page-hero">
+  <div class="wrap">
+    <div class="eyebrow">Estamos para ayudarte</div>
+    <h1 id="con-titulo"></h1>
+    <div class="scanline"></div>
+    <p class="sub" id="con-sub"></p>
+  </div>
+</section>
+<section style="padding-top:36px">
+  <div class="wrap">
+    <div class="cont-grid" style="margin-top:0">
+      <div class="cont-info">
+        <p><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg><span id="con-dir"></span></p>
+        <p><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.4 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.9 2Z"/></svg><span id="con-tel"></span></p>
+        <p><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><span id="con-hor"></span></p>
+        <a class="btn btn-azul" id="con-wa" href="#" target="_blank" rel="noopener"></a>
+        <div class="mapa">
+          <iframe title="Ubicaci&oacute;n de KeyLab" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps?q=Viaducto+Miguel+Alem%C3%A1n+8,+Atenor+Salas,+Benito+Ju%C3%A1rez,+Ciudad+de+M%C3%A9xico&output=embed"></iframe>
+        </div>
+      </div>
+      <form id="form-wa">
+        <div class="f-row">
+          <label>Nombre<input type="text" name="nombre" required autocomplete="name"></label>
+          <label>Tel&eacute;fono<input type="tel" name="telefono" required autocomplete="tel"></label>
+        </div>
+        <div class="f-row">
+          <label>Marca del veh&iacute;culo<input type="text" name="marca" required></label>
+          <label>Modelo<input type="text" name="modelo" required></label>
+        </div>
+        <div class="f-row">
+          <label>A&ntilde;o<input type="number" name="anio" min="1980" max="2027" required></label>
+          <label>Servicio requerido
+            <select name="servicio" required>
+              <option value="">Selecciona una opci&oacute;n</option>
+              <option>Clonaci&oacute;n de mecatr&oacute;nica</option>
+              <option>Programaci&oacute;n de llave</option>
+              <option>Perd&iacute; todas las llaves</option>
+              <option>Servicio a domicilio</option>
+              <option>Diagn&oacute;stico / otro</option>
+            </select>
+          </label>
+        </div>
+        <label>Descripci&oacute;n del problema<textarea name="descripcion" required></textarea></label>
+        <button class="btn btn-azul" type="submit">Enviar por WhatsApp</button>
+      </form>
+    </div>
+  </div>
+</section>
+<section class="faq gris">
+  <div class="wrap" style="max-width:820px">
+    <div class="eyebrow">Dudas frecuentes</div>
+    <h2 id="faq-titulo"></h2>
+    <div id="faq-lista" style="margin-top:30px"></div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="logo" href="#inicio" style="margin-bottom:14px"><span class="k">&#9919;</span>Key<span class="lab">Lab</span></a>
+        <p id="foot-dir"></p>
+        <p id="foot-hor"></p>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <p><a id="foot-tel" href="#"></a></p>
+        <p><a id="foot-wa" href="#" target="_blank" rel="noopener">WhatsApp</a></p>
+        <p><a id="foot-maps" href="#" target="_blank" rel="noopener">Google Maps</a></p>
+      </div>
+      <div>
+        <h4>Redes y legal</h4>
+        <p id="foot-redes"></p>
+        <p id="foot-aviso"></p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span id="foot-derechos"></span>
+      <span>Electr&oacute;nica automotriz &middot; Ciudad de M&eacute;xico</span>
+    </div>
+  </div>
+</footer>
+
+<a class="wa-float" id="wa-float" href="#" target="_blank" rel="noopener" aria-label="Abrir WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.65.07a8.2 8.2 0 0 1-2.4-1.49 9 9 0 0 1-1.66-2.07c-.17-.3-.02-.46.13-.61.14-.13.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.38-.02-.53-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.53.07-.8.37-.28.3-1.05 1.03-1.05 2.5s1.07 2.9 1.22 3.1c.15.2 2.1 3.2 5.1 4.49.71.3 1.27.49 1.7.63.72.23 1.37.2 1.88.12.58-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.41-.08-.13-.28-.2-.58-.35Z"/><path d="M12.05 2a9.9 9.9 0 0 0-8.57 14.87L2 22l5.25-1.38A9.93 9.93 0 1 0 12.05 2Zm0 18.13a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.23 8.23 0 1 1 6.97 3.86Z"/></svg>
+</a>
+
+<script>
+const $=id=>document.getElementById(id);
+const wa=(num,msg)=>`https://wa.me/${num}?text=${encodeURIComponent(msg)}`;
+const set=(id,txt)=>{const el=$(id);if(el)el.textContent=txt;};
+let DATOS=null;
+
+// ===== Router de vistas =====
+const VISTAS=['inicio','clonacion','llaves','domicilio','contacto'];
+function mostrarVista(){
+  let v=(location.hash||'#inicio').replace('#','');
+  if(!VISTAS.includes(v))v='inicio';
+  document.querySelectorAll('.vista').forEach(m=>m.classList.remove('act'));
+  $('v-'+v).classList.add('act');
+  document.querySelectorAll('#menu a[data-vista]').forEach(a=>{
+    a.classList.toggle('act',a.dataset.vista===v);
+  });
+  $('menu').classList.remove('open');
+  window.scrollTo({top:0,behavior:'instant'});
+  if(DATOS)document.title=DATOS.seo.titulos[v]||DATOS.seo.metaTitle;
+}
+window.addEventListener('hashchange',mostrarVista);
+
+// ===== Menu =====
+$('burger').addEventListener('click',()=>$('menu').classList.toggle('open'));
+window.addEventListener('scroll',()=>{
+  $('topbar').classList.toggle('scrolled',window.scrollY>10);
+});
+
+const ICONOS={
+  equipo:'<svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18v3h3l6.3-6.3a4 4 0 0 0 5.4-5.4L15 12l-3-3 2.7-2.7Z"/></svg>',
+  taller:'<svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6"/></svg>',
+  domicilio:'<svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>',
+  diagnostico:'<svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M22 12h-4l-3 8-4-16-3 8H2"/></svg>',
+  marcas:'<svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>',
+  rapido:'<svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8Z"/></svg>'
+};
+
+function setImg(id,src,alt){
+  const p=$(id);
+  if(p&&src){p.classList.remove('vacio');p.innerHTML='';const img=document.createElement('img');img.src=src;img.alt=alt;img.style.width='100%';p.appendChild(img);}
+}
+function llenarPasos(contId,pasos){
+  const cont=$(contId);
+  cont.innerHTML=pasos.map((p,i)=>`<div class="paso"><span class="num">PASO ${String(i+1).padStart(2,'0')}</span><h3></h3><p></p></div>`).join('');
+  cont.querySelectorAll('.paso').forEach((el,i)=>{
+    el.querySelector('h3').textContent=pasos[i].titulo;
+    el.querySelector('p').textContent=pasos[i].texto;
+  });
+}
+
+fetch('content.json').then(r=>r.json()).then(c=>{
+  DATOS=c;
+  const g=c.general;
+  const waGen=wa(g.whatsapp,g.mensajeWhatsAppGeneral);
+
+  // SEO
+  document.title=c.seo.metaTitle;
+  document.querySelector('meta[name="description"]').setAttribute('content',c.seo.metaDescription);
+  document.querySelector('meta[property="og:title"]').setAttribute('content',c.seo.ogTitle);
+  document.querySelector('meta[property="og:description"]').setAttribute('content',c.seo.ogDescription);
+
+  // Globales
+  $('wa-nav').href=waGen;
+  $('wa-float').href=waGen;
+
+  // Inicio
+  set('hero-titulo',c.hero.titulo);
+  set('hero-sub',c.hero.subtitulo);
+  set('hero-btn1',c.hero.botonPrincipal);$('hero-btn1').href=waGen;
+  set('hero-btn2',c.hero.botonSecundario);
+  if(c.hero.imagen){$('hero-img').hidden=false;$('hero-img').querySelector('img').src=c.hero.imagen;}
+  $('ben-grid').innerHTML=c.beneficios.map(b=>`<div class="ben">${ICONOS[b.icono]||ICONOS.equipo}<span></span></div>`).join('');
+  document.querySelectorAll('#ben-grid .ben span').forEach((el,i)=>el.textContent=c.beneficios[i].texto);
+  set('nos-titulo',c.nosotros.titulo);
+  set('nos-p1',c.nosotros.parrafo1);
+  set('nos-p2',c.nosotros.parrafo2);
+  setImg('nos-img',c.nosotros.imagen,'Especialistas KeyLab');
+  set('pro-titulo',c.proceso.titulo);
+  llenarPasos('pro-pasos',c.proceso.pasos);
+  set('mar-titulo',c.marcas.titulo);
+  $('mar-grid').innerHTML=c.marcas.lista.map(()=>'<div class="marca"></div>').join('');
+  document.querySelectorAll('#mar-grid .marca').forEach((el,i)=>el.textContent=c.marcas.lista[i]);
+  set('mar-nota',c.marcas.nota);
+
+  // Clonacion
+  set('clo-titulo',c.clonacion.titulo);
+  set('clo-desc',c.clonacion.descripcion);
+  $('clo-sistemas').innerHTML=c.clonacion.sistemas.map(()=>'<span class="chip"></span>').join('');
+  document.querySelectorAll('#clo-sistemas .chip').forEach((el,i)=>el.textContent=c.clonacion.sistemas[i]);
+  $('clo-caps').innerHTML=c.clonacion.capacidades.map(()=>'<span class="chip"></span>').join('');
+  document.querySelectorAll('#clo-caps .chip').forEach((el,i)=>el.textContent=c.clonacion.capacidades[i]);
+  set('clo-btn',c.clonacion.boton);$('clo-btn').href=wa(g.whatsapp,c.clonacion.mensajeWhatsApp);
+  setImg('clo-img',c.clonacion.imagen,'Clonaci\u00f3n de mecatr\u00f3nicas');
+  document.querySelector('.pro-titulo-2').textContent=c.proceso.titulo;
+  llenarPasos('pro-pasos-2',c.proceso.pasos);
+
+  // Llaves
+  set('lla-titulo',c.llaves.titulo);
+  set('lla-desc',c.llaves.descripcion);
+  $('lla-lista').innerHTML=c.llaves.servicios.map(()=>'<li></li>').join('');
+  document.querySelectorAll('#lla-lista li').forEach((el,i)=>el.textContent=c.llaves.servicios[i]);
+  set('lla-btn',c.llaves.boton);$('lla-btn').href=wa(g.whatsapp,c.llaves.mensajeWhatsApp);
+  setImg('lla-img',c.llaves.imagen,'Programaci\u00f3n de llaves automotrices');
+  set('per-titulo',c.llavesPerdidas.titulo);
+  set('per-p1',c.llavesPerdidas.parrafo1);
+  set('per-p2',c.llavesPerdidas.parrafo2);
+  set('per-btn',c.llavesPerdidas.boton);$('per-btn').href=wa(g.whatsapp,c.llavesPerdidas.mensajeWhatsApp);
+
+  // Domicilio
+  set('dom-titulo',c.domicilio.titulo);
+  set('dom-desc',c.domicilio.descripcion);
+  $('dom-lista').innerHTML=c.domicilio.opciones.map(()=>'<li></li>').join('');
+  document.querySelectorAll('#dom-lista li').forEach((el,i)=>el.textContent=c.domicilio.opciones[i]);
+  set('dom-nota',c.domicilio.aclaracion);
+  set('dom-btn',c.domicilio.boton);$('dom-btn').href=wa(g.whatsapp,c.domicilio.mensajeWhatsApp);
+  setImg('dom-img',c.domicilio.imagen,'Servicio a domicilio KeyLab');
+
+  // Contacto
+  set('con-titulo',c.contacto.titulo);
+  set('con-sub',c.contacto.subtitulo);
+  set('con-dir',g.direccion);
+  set('con-tel',g.telefono);
+  set('con-hor',g.horarios);
+  set('con-wa',c.contacto.botonWhatsApp);$('con-wa').href=waGen;
+  set('faq-titulo',c.faq.titulo);
+  $('faq-lista').innerHTML=c.faq.preguntas.map(()=>'<details><summary></summary><p></p></details>').join('');
+  document.querySelectorAll('#faq-lista details').forEach((el,i)=>{
+    el.querySelector('summary').textContent=c.faq.preguntas[i].pregunta;
+    el.querySelector('p').textContent=c.faq.preguntas[i].respuesta;
+  });
+
+  // CTA final (aparece en varias vistas)
+  document.querySelectorAll('.cta-titulo').forEach(el=>el.textContent=c.ctaFinal.titulo);
+  document.querySelectorAll('.cta-texto').forEach(el=>el.textContent=c.ctaFinal.texto);
+  document.querySelectorAll('.cta-btn').forEach(el=>{el.textContent=c.ctaFinal.boton;el.href=waGen;});
+
+  // Footer
+  set('foot-dir',g.direccion);
+  set('foot-hor',g.horarios);
+  set('foot-tel',g.telefono);$('foot-tel').href='tel:+'+g.whatsapp;
+  $('foot-wa').href=waGen;
+  $('foot-maps').href=g.mapsUrl;
+  const redes=c.footer.redes.filter(r=>r.url);
+  $('foot-redes').innerHTML=redes.map(()=>'<a target="_blank" rel="noopener"></a>').join(' &middot; ')||'&mdash;';
+  document.querySelectorAll('#foot-redes a').forEach((el,i)=>{el.textContent=redes[i].nombre;el.href=redes[i].url;});
+  if(c.footer.avisoPrivacidad){
+    $('foot-aviso').innerHTML='<a></a>';
+    const a=$('foot-aviso').querySelector('a');
+    a.textContent='Aviso de privacidad';a.href=c.footer.avisoPrivacidad;
+  }
+  set('foot-derechos',c.footer.derechos);
+
+  // Formulario -> WhatsApp
+  $('form-wa').addEventListener('submit',e=>{
+    e.preventDefault();
+    const f=new FormData(e.target);
+    const msg=c.contacto.mensajeFormulario+"\n"+
+      "\n*Nombre:* "+f.get('nombre')+
+      "\n*Tel\u00e9fono:* "+f.get('telefono')+
+      "\n*Veh\u00edculo:* "+f.get('marca')+" "+f.get('modelo')+" "+f.get('anio')+
+      "\n*Servicio:* "+f.get('servicio')+
+      "\n*Descripci\u00f3n:* "+f.get('descripcion');
+    window.open(wa(g.whatsapp,msg),'_blank');
+  });
+
+  mostrarVista();
+  $('loader').classList.add('off');
+}).catch(()=>{$('loader').classList.add('off');mostrarVista();});
+</script>
+
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<script>
+if (
+  window.location.hash.includes('invite_token') ||
+  window.location.hash.includes('recovery_token') ||
+  window.location.hash.includes('confirmation_token')
+) {
+  window.location.href = "/admin/" + window.location.hash;
+}
+</script>
+</body>
+</html>

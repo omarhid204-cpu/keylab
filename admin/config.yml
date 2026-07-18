@@ -1,0 +1,192 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images"
+public_folder: "/images"
+
+locale: es
+
+collections:
+  - name: "contenido"
+    label: "Contenido del sitio"
+    files:
+      - name: "home"
+        label: "Página principal"
+        file: "content.json"
+        fields:
+          - label: "SEO y metadatos"
+            name: "seo"
+            widget: "object"
+            fields:
+              - { label: "Meta título", name: "metaTitle", widget: "string" }
+              - { label: "Meta descripción", name: "metaDescription", widget: "text" }
+              - { label: "Palabras clave", name: "keywords", widget: "text" }
+              - { label: "Título Open Graph", name: "ogTitle", widget: "string" }
+              - { label: "Descripción Open Graph", name: "ogDescription", widget: "text" }
+              - label: "Títulos por página"
+                name: "titulos"
+                widget: "object"
+                fields:
+                  - { label: "Inicio", name: "inicio", widget: "string" }
+                  - { label: "Clonación", name: "clonacion", widget: "string" }
+                  - { label: "Llaves", name: "llaves", widget: "string" }
+                  - { label: "Domicilio", name: "domicilio", widget: "string" }
+                  - { label: "Contacto", name: "contacto", widget: "string" }
+          - label: "Datos generales"
+            name: "general"
+            widget: "object"
+            fields:
+              - { label: "Nombre del negocio", name: "nombre", widget: "string" }
+              - { label: "Teléfono (como se muestra)", name: "telefono", widget: "string" }
+              - { label: "WhatsApp (solo números, con 52)", name: "whatsapp", widget: "string" }
+              - { label: "Dirección", name: "direccion", widget: "string" }
+              - { label: "Enlace de Google Maps", name: "mapsUrl", widget: "string" }
+              - { label: "Horarios", name: "horarios", widget: "string" }
+              - { label: "Mensaje de WhatsApp general", name: "mensajeWhatsAppGeneral", widget: "text" }
+
+          - label: "Portada (Hero)"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Título principal", name: "titulo", widget: "string" }
+              - { label: "Subtítulo", name: "subtitulo", widget: "text" }
+              - { label: "Botón principal", name: "botonPrincipal", widget: "string" }
+              - { label: "Botón secundario", name: "botonSecundario", widget: "string" }
+              - { label: "Imagen principal (opcional)", name: "imagen", widget: "image", required: false, allow_multiple: false }
+
+          - label: "Beneficios rápidos"
+            name: "beneficios"
+            widget: "list"
+            label_singular: "beneficio"
+            fields:
+              - label: "Icono"
+                name: "icono"
+                widget: "select"
+                options:
+                  - { label: "Herramienta / equipo", value: "equipo" }
+                  - { label: "Taller", value: "taller" }
+                  - { label: "Ubicación / domicilio", value: "domicilio" }
+                  - { label: "Diagnóstico", value: "diagnostico" }
+                  - { label: "Marcas", value: "marcas" }
+                  - { label: "Rayo / rapidez", value: "rapido" }
+              - { label: "Texto", name: "texto", widget: "string" }
+
+          - label: "Sobre KeyLab"
+            name: "nosotros"
+            widget: "object"
+            fields:
+              - { label: "Título", name: "titulo", widget: "string" }
+              - { label: "Párrafo 1", name: "parrafo1", widget: "text" }
+              - { label: "Párrafo 2", name: "parrafo2", widget: "text" }
+              - { label: "Imagen (opcional)", name: "imagen", widget: "image", required: false }
+
+          - label: "Clonación de mecatrónicas"
+            name: "clonacion"
+            widget: "object"
+            fields:
+              - { label: "Título", name: "titulo", widget: "string" }
+              - { label: "Descripción", name: "descripcion", widget: "text" }
+              - { label: "Sistemas (etiquetas)", name: "sistemas", widget: "list", label_singular: "sistema", field: { label: "Sistema", name: "sistema", widget: "string" } }
+              - { label: "Capacidades (etiquetas)", name: "capacidades", widget: "list", label_singular: "capacidad", field: { label: "Capacidad", name: "capacidad", widget: "string" } }
+              - { label: "Texto del botón", name: "boton", widget: "string" }
+              - { label: "Mensaje de WhatsApp", name: "mensajeWhatsApp", widget: "text" }
+              - { label: "Imagen (opcional)", name: "imagen", widget: "image", required: false }
+
+          - label: "Programación de llaves"
+            name: "llaves"
+            widget: "object"
+            fields:
+              - { label: "Título", name: "titulo", widget: "string" }
+              - { label: "Descripción", name: "descripcion", widget: "text" }
+              - { label: "Servicios", name: "servicios", widget: "list", label_singular: "servicio", field: { label: "Servicio", name: "servicio", widget: "string" } }
+              - { label: "Texto del botón", name: "boton", widget: "string" }
+              - { label: "Mensaje de WhatsApp", name: "mensajeWhatsApp", widget: "text" }
+              - { label: "Imagen (opcional)", name: "imagen", widget: "image", required: false }
+
+          - label: "¿Perdiste todas tus llaves?"
+            name: "llavesPerdidas"
+            widget: "object"
+            fields:
+              - { label: "Título", name: "titulo", widget: "string" }
+              - { label: "Párrafo 1", name: "parrafo1", widget: "text" }
+              - { label: "Párrafo 2", name: "parrafo2", widget: "text" }
+              - { label: "Texto del botón", name: "boton", widget: "string" }
+              - { label: "Mensaje de WhatsApp", name: "mensajeWhatsApp", widget: "text" }
+
+          - label: "Servicio a domicilio"
+            name: "domicilio"
+            widget: "object"
+            fields:
+              - { label: "Título", name: "titulo", widget: "string" }
+              - { label: "Descripción", name: "descripcion", widget: "text" }
+              - { label: "Opciones", name: "opciones", widget: "list", label_singular: "opción", field: { label: "Opción", name: "opcion", widget: "string" } }
+              - { label: "Aclaración", name: "aclaracion", widget: "text" }
+              - { label: "Texto del botón", name: "boton", widget: "string" }
+              - { label: "Mensaje de WhatsApp", name: "mensajeWhatsApp", widget: "text" }
+              - { label: "Imagen (opcional)", name: "imagen", widget: "image", required: false }
+
+          - label: "Cómo trabajamos"
+            name: "proceso"
+            widget: "object"
+            fields:
+              - { label: "Título", name: "titulo", widget: "string" }
+              - label: "Pasos"
+                name: "pasos"
+                widget: "list"
+                label_singular: "paso"
+                fields:
+                  - { label: "Título del paso", name: "titulo", widget: "string" }
+                  - { label: "Texto", name: "texto", widget: "text" }
+
+          - label: "Marcas"
+            name: "marcas"
+            widget: "object"
+            fields:
+              - { label: "Título", name: "titulo", widget: "string" }
+              - { label: "Lista de marcas", name: "lista", widget: "list", label_singular: "marca", field: { label: "Marca", name: "marca", widget: "string" } }
+              - { label: "Nota de compatibilidad", name: "nota", widget: "text" }
+
+          - label: "Preguntas frecuentes"
+            name: "faq"
+            widget: "object"
+            fields:
+              - { label: "Título", name: "titulo", widget: "string" }
+              - label: "Preguntas"
+                name: "preguntas"
+                widget: "list"
+                label_singular: "pregunta"
+                fields:
+                  - { label: "Pregunta", name: "pregunta", widget: "string" }
+                  - { label: "Respuesta", name: "respuesta", widget: "text" }
+
+          - label: "Llamada final a la acción"
+            name: "ctaFinal"
+            widget: "object"
+            fields:
+              - { label: "Título", name: "titulo", widget: "string" }
+              - { label: "Texto", name: "texto", widget: "text" }
+              - { label: "Texto del botón", name: "boton", widget: "string" }
+
+          - label: "Contacto"
+            name: "contacto"
+            widget: "object"
+            fields:
+              - { label: "Título", name: "titulo", widget: "string" }
+              - { label: "Subtítulo", name: "subtitulo", widget: "text" }
+              - { label: "Texto del botón de WhatsApp", name: "botonWhatsApp", widget: "string" }
+              - { label: "Mensaje inicial del formulario", name: "mensajeFormulario", widget: "text" }
+
+          - label: "Pie de página"
+            name: "footer"
+            widget: "object"
+            fields:
+              - label: "Redes sociales"
+                name: "redes"
+                widget: "list"
+                label_singular: "red social"
+                fields:
+                  - { label: "Nombre", name: "nombre", widget: "string" }
+                  - { label: "Enlace (dejar vacío para ocultar)", name: "url", widget: "string", required: false }
+              - { label: "Enlace de aviso de privacidad (opcional)", name: "avisoPrivacidad", widget: "string", required: false }
+              - { label: "Texto de derechos reservados", name: "derechos", widget: "string" }

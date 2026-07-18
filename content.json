@@ -1,0 +1,230 @@
+{
+  "seo": {
+    "metaTitle": "KeyLab · Clonación de Mecatrónicas y Programación de Llaves Automotrices en CDMX",
+    "metaDescription": "Especialistas en electrónica automotriz en Ciudad de México: clonación de mecatrónicas DSG, DQ200, DQ250, DQ381 y CVT, programación y duplicado de llaves con chip e inteligentes. Servicio en taller y a domicilio.",
+    "keywords": "clonación de mecatrónicas CDMX, programación de llaves automotrices, llaves con chip Ciudad de México, DQ200, DQ381, duplicado de llaves, inmovilizador",
+    "ogTitle": "KeyLab · Electrónica automotriz en CDMX",
+    "ogDescription": "Clonación de mecatrónicas y programación de llaves automotrices. Servicio en taller y a domicilio en Ciudad de México.",
+    "titulos": {
+      "inicio": "KeyLab · Electrónica Automotriz en CDMX",
+      "clonacion": "Clonación de Mecatrónicas · KeyLab",
+      "llaves": "Programación de Llaves · KeyLab",
+      "domicilio": "Servicio a Domicilio · KeyLab",
+      "contacto": "Contacto · KeyLab"
+    }
+  },
+  "general": {
+    "nombre": "KeyLab",
+    "telefono": "+52 56 2677 3177",
+    "whatsapp": "525626773177",
+    "direccion": "Viaducto Miguel Alemán No. 8, Col. Atenor Salas, Ciudad de México",
+    "mapsUrl": "https://maps.app.goo.gl/W5Z6r5SNKyVmL1nZ6",
+    "horarios": "Lunes a Viernes 9:00–19:00 · Sábado 9:00–15:00",
+    "mensajeWhatsAppGeneral": "Hola KeyLab, quiero solicitar información sobre un servicio para mi vehículo."
+  },
+  "hero": {
+    "titulo": "Especialistas en Clonación de Mecatrónicas y Programación de Llaves Automotrices",
+    "subtitulo": "Recuperamos el funcionamiento de tu vehículo con equipo profesional. Servicio en taller y a domicilio.",
+    "botonPrincipal": "Solicitar cotización por WhatsApp",
+    "botonSecundario": "Conocer nuestros servicios",
+    "imagen": ""
+  },
+  "beneficios": [
+    {
+      "icono": "equipo",
+      "texto": "Equipo profesional"
+    },
+    {
+      "icono": "taller",
+      "texto": "Servicio en taller"
+    },
+    {
+      "icono": "domicilio",
+      "texto": "Atención a domicilio"
+    },
+    {
+      "icono": "diagnostico",
+      "texto": "Diagnóstico especializado"
+    },
+    {
+      "icono": "marcas",
+      "texto": "Diversas marcas"
+    },
+    {
+      "icono": "rapido",
+      "texto": "Respuesta rápida"
+    }
+  ],
+  "nosotros": {
+    "titulo": "Sobre KeyLab",
+    "parrafo1": "En KeyLab somos especialistas en electrónica automotriz. Realizamos clonación de mecatrónicas, programación y duplicado de llaves con chip, diagnóstico de inmovilizadores y soluciones para módulos electrónicos de diversas marcas.",
+    "parrafo2": "Nuestro objetivo es recuperar el funcionamiento del vehículo utilizando equipo profesional, procedimientos especializados y soluciones confiables.",
+    "imagen": ""
+  },
+  "clonacion": {
+    "titulo": "Clonación de Mecatrónicas",
+    "descripcion": "La clonación permite transferir la información de una mecatrónica o módulo original hacia una unidad de reemplazo compatible. Esto puede ayudar a conservar datos importantes del vehículo y evitar reemplazos innecesarios de otros sistemas.",
+    "sistemas": [
+      "DSG",
+      "DQ200",
+      "DQ250",
+      "DQ381",
+      "CVT",
+      "Automáticas convencionales"
+    ],
+    "capacidades": [
+      "Transferencia de datos",
+      "Adaptación",
+      "Programación",
+      "Configuración"
+    ],
+    "boton": "Cotizar clonación de mecatrónica",
+    "mensajeWhatsApp": "Hola KeyLab, quiero cotizar la clonación de una mecatrónica. Mi vehículo es:",
+    "imagen": ""
+  },
+  "llaves": {
+    "titulo": "Programación de Llaves",
+    "descripcion": "Programamos y duplicamos llaves para una amplia variedad de vehículos, desde llaves con chip hasta llaves inteligentes de proximidad.",
+    "servicios": [
+      "Llaves con chip",
+      "Llaves inteligentes",
+      "Controles remotos",
+      "Programación desde cero",
+      "Duplicado de llaves",
+      "Agregar llaves adicionales",
+      "Diagnóstico de inmovilizador",
+      "Sincronización de controles"
+    ],
+    "boton": "Cotizar programación de llave",
+    "mensajeWhatsApp": "Hola KeyLab, quiero cotizar la programación de una llave. Mi vehículo es:",
+    "imagen": ""
+  },
+  "llavesPerdidas": {
+    "titulo": "¿Perdiste la única llave de tu vehículo?",
+    "parrafo1": "Podemos generar y programar una nueva llave para una gran variedad de vehículos, sin necesidad de reemplazar todo el sistema en muchos casos.",
+    "parrafo2": "Primero verificamos la marca, modelo, año y sistema del vehículo para determinar la solución adecuada.",
+    "boton": "Necesito una llave nueva",
+    "mensajeWhatsApp": "Hola KeyLab, perdí todas las llaves de mi vehículo y necesito una solución. Mi vehículo es:"
+  },
+  "domicilio": {
+    "titulo": "Servicio a Domicilio",
+    "descripcion": "KeyLab puede realizar determinados servicios fuera del taller, dependiendo del vehículo y del tipo de trabajo.",
+    "opciones": [
+      "Programación en domicilio",
+      "Programación en oficinas",
+      "Atención en estacionamientos",
+      "Servicio para flotillas",
+      "Atención a empresas",
+      "Diagnóstico inicial en sitio"
+    ],
+    "aclaracion": "La disponibilidad del servicio a domicilio depende de la marca, modelo, ubicación y tipo de programación requerida.",
+    "boton": "Solicitar servicio a domicilio",
+    "mensajeWhatsApp": "Hola KeyLab, quiero consultar disponibilidad de servicio a domicilio. Mi ubicación y vehículo son:",
+    "imagen": ""
+  },
+  "proceso": {
+    "titulo": "Cómo trabajamos",
+    "pasos": [
+      {
+        "titulo": "Nos contactas",
+        "texto": "Envías marca, modelo, año y una breve descripción del problema."
+      },
+      {
+        "titulo": "Revisamos el vehículo",
+        "texto": "Analizamos la información para determinar el servicio requerido."
+      },
+      {
+        "titulo": "Cotizamos",
+        "texto": "Enviamos precio estimado, disponibilidad y condiciones del servicio."
+      },
+      {
+        "titulo": "Programamos o clonamos",
+        "texto": "Realizamos el trabajo en taller o a domicilio, según el caso."
+      }
+    ]
+  },
+  "marcas": {
+    "titulo": "Marcas que atendemos",
+    "lista": [
+      "Volkswagen",
+      "Audi",
+      "SEAT",
+      "BMW",
+      "Mercedes-Benz",
+      "Nissan",
+      "Toyota",
+      "Honda",
+      "Ford",
+      "Chevrolet",
+      "Kia",
+      "Hyundai",
+      "Mazda",
+      "Peugeot",
+      "Renault",
+      "Jeep",
+      "Dodge",
+      "RAM",
+      "Mitsubishi",
+      "Suzuki"
+    ],
+    "nota": "La disponibilidad del servicio depende del modelo, año, sistema electrónico y equipo requerido. Contáctanos para confirmar compatibilidad."
+  },
+  "faq": {
+    "titulo": "Preguntas frecuentes",
+    "preguntas": [
+      {
+        "pregunta": "¿Necesito llevar el vehículo?",
+        "respuesta": "Depende del servicio. Algunos trabajos requieren el vehículo en taller, mientras que otros pueden realizarse a domicilio."
+      },
+      {
+        "pregunta": "¿Trabajan a domicilio?",
+        "respuesta": "Sí, en determinados servicios y zonas. Primero revisamos marca, modelo y ubicación."
+      },
+      {
+        "pregunta": "¿Cuánto tarda el servicio?",
+        "respuesta": "El tiempo depende del tipo de llave, módulo o mecatrónica. Se confirma después del diagnóstico inicial."
+      },
+      {
+        "pregunta": "¿Programan llaves inteligentes?",
+        "respuesta": "Sí, atendemos llaves con chip, controles remotos y llaves inteligentes para diversas marcas."
+      },
+      {
+        "pregunta": "¿Qué pasa si perdí todas las llaves?",
+        "respuesta": "Podemos generar y programar una nueva llave en muchos vehículos. Es necesario revisar marca, modelo, año y sistema."
+      },
+      {
+        "pregunta": "¿La clonación conserva la información original?",
+        "respuesta": "En muchos casos se transfieren datos importantes del módulo original a una unidad compatible. La viabilidad depende del estado del módulo y del sistema."
+      },
+      {
+        "pregunta": "¿Qué información debo enviar para cotizar?",
+        "respuesta": "Marca, modelo, año, tipo de transmisión o llave, descripción de la falla y fotografías cuando sea necesario."
+      }
+    ]
+  },
+  "ctaFinal": {
+    "titulo": "¿Tu vehículo presenta problemas de llave, inmovilizador o mecatrónica?",
+    "texto": "En KeyLab analizamos tu caso y te orientamos hacia la solución adecuada.",
+    "boton": "Hablar con un especialista"
+  },
+  "contacto": {
+    "titulo": "Contacto",
+    "botonWhatsApp": "Enviar mensaje por WhatsApp",
+    "subtitulo": "Envíanos los datos de tu vehículo y te orientamos hacia la solución adecuada.",
+    "mensajeFormulario": "Hola KeyLab, quiero solicitar una cotización. Estos son mis datos:"
+  },
+  "footer": {
+    "redes": [
+      {
+        "nombre": "Facebook",
+        "url": ""
+      },
+      {
+        "nombre": "Instagram",
+        "url": ""
+      }
+    ],
+    "avisoPrivacidad": "",
+    "derechos": "© 2026 KeyLab. Todos los derechos reservados."
+  }
+}
