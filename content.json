@@ -30,7 +30,7 @@
     "aclaracion": "La disponibilidad del servicio a domicilio depende de la marca, modelo, ubicación y tipo de programación requerida.",
     "boton": "Solicitar servicio a domicilio",
     "mensajeWhatsApp": "Hola KeyLab, quiero consultar disponibilidad de servicio a domicilio. Mi ubicación y vehículo son:",
-    "imagen": ""
+    "imagen": "/images/domicilio.webp"
   },
   "ctaFinal": {
     "titulo": "¿Tu vehículo presenta problemas de llave, inmovilizador o mecatrónica?",
@@ -176,11 +176,11 @@
     "redes": [
       {
         "nombre": "Facebook",
-        "url": ""
+        "url": "https://www.facebook.com/profile.php?id=61573822450185&locale=es_LA"
       },
       {
         "nombre": "Instagram",
-        "url": ""
+        "url": "https://www.instagram.com/direccionestorres?fbclid=IwY2xjawTPd2pleHRuA2FlbQIxMABicmlkETFPU0RyOW1QYjRvSGtGTkYxc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHlEzeUijLfHZHKaDoFs8PP08RDtjl1VBkVLRTQ9N3t3b8WRH1dWQ9IDx-H3Z_aem_iSTgXu9jigONq2oFXVsZLg"
       }
     ],
     "avisoPrivacidad": "",
